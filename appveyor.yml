@@ -45,7 +45,7 @@ install:
   # about it being out of date.
   - "pip install --disable-pip-version-check --user --upgrade pip"
   - "pip install -e . --upgrade"
-  - "pipenv install --system --dev --skip-lock"
+  - "pipenv install --system --dev --skip-lock --verbose"
 
 test_script:
   - "pipenv run pytest -n 8 tests/test_pipenv.py tests/test_project.py tests/test_utils.py"
