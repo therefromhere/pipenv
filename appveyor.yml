@@ -10,8 +10,8 @@ environment:
 
   matrix:
 
-    - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.x"
+    - PYTHON: "C:\\Python27-x64"
+      PYTHON_VERSION: "2.7.x"
       PYTHON_ARCH: "64"
 
 install:
@@ -36,4 +36,4 @@ install:
   - "pipenv install --system --dev --skip-lock"
 
 test_script:
-  - tox -e "py27,py36"
+  - tox -e "py27"
