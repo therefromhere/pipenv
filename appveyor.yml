@@ -10,18 +10,6 @@ environment:
 
   matrix:
 
-    - PYTHON: "C:\\Python27-x64"
-      PYTHON_VERSION: "2.7.x"
-      PYTHON_ARCH: "64"
-
-    - PYTHON: "C:\\Python34-x64"
-      PYTHON_VERSION: "3.4.x"
-      PYTHON_ARCH: "64"
-
-    - PYTHON: "C:\\Python35-x64"
-      PYTHON_VERSION: "3.5.x"
-      PYTHON_ARCH: "64"
-
     - PYTHON: "C:\\Python36-x64"
       PYTHON_VERSION: "3.6.x"
       PYTHON_ARCH: "64"
@@ -48,4 +36,4 @@ install:
   - "pipenv install --system --dev --skip-lock"
 
 test_script:
-  - "pipenv run pytest -n 8 tests/test_pipenv.py tests/test_project.py tests/test_utils.py"
+  - tox -e "py27,py36"
