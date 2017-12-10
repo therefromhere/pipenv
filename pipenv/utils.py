@@ -870,7 +870,7 @@ def is_installable_file(path):
     if not isinstance(path, six.string_types) or path == '*':
         return False
     # If the string starts with a valid specifier operator, test if it is a valid
-    # specifier set before making a path object (to avoid breakng windows)
+    # specifier set before making a path object (to avoid breaking windows)
     if any(path.startswith(spec) for spec in '!=<>'):
         try:
             pip.utils.packaging.specifiers.SpecifierSet(path)
